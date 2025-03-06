@@ -1,0 +1,109 @@
+// Creating Arrays
+const fruits = ['Apple', 'Banana', 'Cherry'];
+const numbers = [1, 2, 3, 4, 5];
+const mixedArray = ['Text', 42, true, { name: 'John' }, [1, 2, 3]];
+
+// Accessing Elements
+console.log(fruits[0]); // Output: Apple
+console.log(numbers[2]); // Output: 3
+
+// Array Length
+console.log(fruits.length); // Output: 3
+
+// Adding Elements
+fruits.push('Orange'); // Adds to the end
+console.log(fruits); // Output: ['Apple', 'Banana', 'Cherry', 'Orange']
+
+fruits.unshift('Strawberry'); // Adds to the beginning
+console.log(fruits); // Output: ['Strawberry', 'Apple', 'Banana', 'Cherry', 'Orange']
+
+// Removing Elements
+const lastFruit = fruits.pop(); // Removes from the end
+console.log(lastFruit); // Output: Orange
+console.log(fruits); // Output: ['Strawberry', 'Apple', 'Banana', 'Cherry']
+
+const firstFruit = fruits.shift(); // Removes from the beginning
+console.log(firstFruit); // Output: Strawberry
+console.log(fruits); // Output: ['Apple', 'Banana', 'Cherry']
+
+// Iterating Over Arrays
+fruits.forEach((fruit, index) => {
+  console.log(`${index}: ${fruit}`);
+});
+
+// Output:
+// 0: Apple
+// 1: Banana
+// 2: Cherry
+
+// Transforming Arrays
+const upperCaseFruits = fruits.map(fruit => fruit.toUpperCase());
+console.log(upperCaseFruits); // Output: ['APPLE', 'BANANA', 'CHERRY']
+
+// Filtering Arrays
+const numbersGreaterThanTwo = numbers.filter(number => number > 2);
+console.log(numbersGreaterThanTwo); // Output: [3, 4, 5]
+
+// Reducing Arrays
+const sumOfNumbers = numbers.reduce((sum, number) => sum + number, 0);
+console.log(sumOfNumbers); // Output: 15
+
+// Checking Array Elements
+const hasBanana = fruits.includes('Banana');
+console.log(hasBanana); // Output: true
+
+const hasGrapes = fruits.includes('Grapes');
+console.log(hasGrapes); // Output: false
+
+// Finding Elements
+const foundNumber = numbers.find(number => number > 3);
+console.log(foundNumber); // Output: 4
+
+// Finding Index
+const bananaIndex = fruits.indexOf('Banana');
+console.log(bananaIndex); // Output: 1
+
+// Slicing Arrays
+const slicedFruits = fruits.slice(1, 3);
+console.log(slicedFruits); // Output: ['Banana', 'Cherry']
+
+// Splicing Arrays
+const splicedFruits = fruits.splice(1, 1, 'Blueberry');
+console.log(splicedFruits); // Output: ['Banana']
+console.log(fruits); // Output: ['Apple', 'Blueberry', 'Cherry']
+
+// Concatenating Arrays
+const combinedArray = fruits.concat(numbers);
+console.log(combinedArray); // Output: ['Apple', 'Blueberry', 'Cherry', 1, 2, 3, 4, 5]
+
+// Flattening Arrays
+const nestedArray = [1, [2, [3, [4, 5]]]];
+const flatArray = nestedArray.flat(2);
+console.log(flatArray); // Output: [1, 2, 3, [4, 5]]
+
+// Array from a String
+const str = 'hello';
+const charArray = Array.from(str);
+console.log(charArray); // Output: ['h', 'e', 'l', 'l', 'o']
+
+// Creating Arrays with a Specific Length
+const emptyArray = new Array(3);
+console.log(emptyArray); // Output: [ <3 empty items> ]
+
+const filledArray = new Array(3).fill('Hello');
+console.log(filledArray); // Output: ['Hello', 'Hello', 'Hello']
+
+// Sorting Arrays
+const sortedNumbers = numbers.sort((a, b) => a - b);
+console.log(sortedNumbers); // Output: [1, 2, 3, 4, 5]
+
+const sortedFruits = fruits.sort();
+console.log(sortedFruits); // Output: ['Apple', 'Blueberry', 'Cherry']
+
+// Reversing Arrays
+const reversedNumbers = numbers.reverse();
+console.log(reversedNumbers); // Output: [5, 4, 3, 2, 1]
+
+// Joining Arrays
+const fruitString = fruits.join(', ');
+console.log(fruitString); // Output: 'Apple, Blueberry, Cherry'
